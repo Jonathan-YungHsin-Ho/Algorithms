@@ -17,15 +17,18 @@ import sys
 #     return cache[n]
 
 def eating_cookies(n, cache=None):
-    if cache is None:
+    if not cache:
         cache = [1, 1, 2] + [0 for i in range(n - 2)]
-    elif cache:
+    else:
         cache[0], cache[1], cache[2] = 1, 1, 2
-    if not cache[n]:
+
+    if cache[n]:
+        return cache[n]
+    else:
         cache[n] = eating_cookies(n - 3, cache) \
             + eating_cookies(n - 2, cache) \
             + eating_cookies(n - 1, cache)
-    return cache[n]
+        return cache[n]
 
 
 if __name__ == "__main__":
