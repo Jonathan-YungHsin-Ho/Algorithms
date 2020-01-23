@@ -21,7 +21,7 @@ def eating_cookies(n, cache=None):
         cache = [1, 1, 2] + [0 for i in range(n - 2)]
     elif cache:
         cache[0], cache[1], cache[2] = 1, 1, 2
-    if cache[n] == 0:
+    if not cache[n]:
         cache[n] = eating_cookies(n - 3, cache) \
             + eating_cookies(n - 2, cache) \
             + eating_cookies(n - 1, cache)

@@ -10,6 +10,9 @@ def rock_paper_scissors(n):
 
     if n == 0:
         output_list.append([])
+    if n == 1:
+        for play in plays:
+            pass
 
     return output_list
 
