@@ -7,7 +7,7 @@ def rock_paper_scissors(n):
     output = []
     plays = ['rock', 'paper', 'scissors']
 
-    def build_moves(n, moves):
+    def build_moves(n, moves=[]):
         if n == 0:
             output.append(moves)
         else:
@@ -15,7 +15,7 @@ def rock_paper_scissors(n):
                 build_moves(n - 1, moves + [play])
         return output
 
-    return build_moves(n, [])
+    return build_moves(n)
 
 
 if __name__ == "__main__":
