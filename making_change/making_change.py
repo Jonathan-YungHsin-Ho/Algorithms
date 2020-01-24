@@ -4,10 +4,14 @@ import sys
 
 
 def making_change(amount, denominations):
+    # initialize cache
     cache = {key: 0 for key in range(amount + 1)}
+
+    # set base case value
     cache[0] = 1
 
     for coin in denominations:
+        # for each coin, update the cache with all of the ways of making different amounts using the current coin
         for higher_amount in range(coin, amount + 1):
             cache[higher_amount] += cache[higher_amount - coin]
 
