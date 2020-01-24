@@ -4,7 +4,7 @@ import sys
 
 
 def making_change(amount, denominations):
-    cache = {k: 0 for k in range(amount + 1)}
+    cache = {key: 0 for key in range(amount + 1)}
     cache[0] = 1
 
     for coin in denominations:
