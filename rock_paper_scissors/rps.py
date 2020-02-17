@@ -12,7 +12,7 @@ def rock_paper_scissors(n):
             output.append(moves)
         else:
             for play in plays:
-                build_moves(moves_remaining - 1, moves + [play])
+                build_moves(moves_remaining - 1, [*moves, play])
         return output
 
     return build_moves(n)
